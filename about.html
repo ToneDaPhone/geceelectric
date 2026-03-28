@@ -1,1 +1,179 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
+<title>Palmetto Services LLC of SC - About</title>
+
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #000000;
+  color: white;
+  margin: 0;
+}
+
+.center { text-align: center; }
+
+a { color: #4EA5D9; }
+
+/* HEADER */
+.header {
+  overflow: hidden;
+  background-color: #000000;
+  padding: 20px 10px;
+  position: relative;
+  z-index: 10000;
+}
+
+.header a {
+  margin: 0;
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  background-color: #4C4C4C;
+  color: white;
+}
+
+.header a.active {
+  background-color: #000080;
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+
+/* HAMBURGER ICON */
+#menuIcon {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+  float: right;
+  padding: 10px;
+}
+
+/* MOBILE MENU */
+@media screen and (max-width: 600px) {
+  .header-right {
+    display: none;
+    width: 100%;
+    background-color: #000000;
+    text-align: left;
+    padding-top: 10px;
+    float: none;
+  }
+
+  .header a {
+    float: none;
+    display: block;
+    padding: 14px;
+    border-bottom: 1px solid #333;
+  }
+
+  #menuIcon {
+    display: block;
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- UPDATED HEADER WITH MATCHING MENU -->
+<div class="header">
+
+  <a href="index.html">
+    <img src="Images/PSLogo.jpg" align="left" style="width:60px;height:60px;">
+  </a>
+
+  <a href="services.html" class="logo">Palmetto Services LLC of SC</a>
+
+  <!-- HAMBURGER ICON -->
+  <span id="menuIcon" onclick="toggleMenu()">☰</span>
+
+  <!-- NAV LINKS -->
+  <div class="header-right" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a class="active" href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+</div>
+
+<!-- PAGE CONTENT -->
+<div style="max-width:800px; margin:40px auto; padding:20px; text-align:center; line-height:1.7; font-size:18px;">
+
+  <h2 style="margin-bottom:20px;">About Palmetto Services LLC of SC</h2>
+
+<!-- IMAGE TABLE -->
+<table style="margin:0 auto 25px auto; width:100%; max-width:1200px; border-collapse:collapse; text-align:center;">
+  <tr>
+    <td style="padding:10px;">
+      <img src="Images/PSLogo.jpg"
+           style="width:100%; max-width:600px; height:auto; object-fit:contain;">
+    </td>
+    <td style="padding:10px;">
+      <img src="Images/About2.jpg"
+           style="width:100%; max-width:600px; height:auto; object-fit:contain;">
+    </td>
+  </tr>
+</table>
+
+  <p style="margin-bottom:18px;">
+    Palmetto Services LLC of SC is a locally owned and operated home‑services company dedicated to helping homeowners improve, protect, and enjoy their living spaces. Based right here in South Carolina, we take pride in delivering high‑quality workmanship with a level of care and professionalism that’s hard to find today.
+  </p>
+
+  <p style="margin-bottom:18px;">
+    We specialize in a wide range of home improvement and property‑enhancement services — from interior and exterior renovations to custom carpentry, repairs, and security‑camera installations. Whether you’re updating a kitchen, refreshing a living space, or adding peace of mind with a modern surveillance system, our goal is simple: <strong>to provide reliable service and results you’ll be proud of.</strong>
+  </p>
+
+  <p style="margin-bottom:18px;">
+    What sets us apart is our commitment to honesty, clear communication, and doing the job right the first time. We treat every home as if it were our own, and every project — big or small — receives the same attention to detail. Our customers know they can count on us for quality craftsmanship, fair pricing, and a smooth, stress‑free experience from start to finish.
+  </p>
+
+  <p>
+    At Palmetto Services LLC of SC, we believe your home should be a place of comfort, security, and pride. We’re here to help you make that a reality.
+  </p>
+
+</div>
+
+
+
+<!-- FOOTER TEXT -->
+<div class="center">
+  <p>
+    <br>Check out the <a href="portfolio.html">Portfolio Page</a> to see our work.
+    <br><br>
+    If you would like more information, visit our <a href="contact.html">Contact Page</a>.
+  </p>
+</div>
+  
+<!-- MOBILE MENU SCRIPT -->
+<script>
+function toggleMenu() {
+  var menu = document.getElementById("mobileMenu");
+  menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
