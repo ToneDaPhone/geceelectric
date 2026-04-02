@@ -1,1 +1,215 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
+<title>Palmetto Services LLC of SC - About</title>
+
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #000000;
+  color: white;
+  margin: 0;
+}
+
+.center { text-align: center; }
+
+a { color: #4EA5D9; }
+
+/* HEADER */
+.header {
+  overflow: hidden;
+  background-color: #000000;
+  padding: 20px 10px;
+  position: relative;
+  z-index: 10000;
+}
+
+.header a {
+  margin: 0;
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  background-color: #4C4C4C;
+  color: white;
+}
+
+.header a.active {
+  background-color: #000080;
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+
+/* HAMBURGER ICON */
+#menuIcon {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+  float: right;
+  padding: 10px;
+}
+
+/* MOBILE MENU */
+@media screen and (max-width: 600px) {
+  .header-right {
+    display: none;
+    width: 100%;
+    background-color: #000000;
+    text-align: left;
+    padding-top: 10px;
+    float: none;
+  }
+
+  .header a {
+    float: none;
+    display: block;
+    padding: 14px;
+    border-bottom: 1px solid #333;
+  }
+
+  #menuIcon {
+    display: block;
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- UPDATED HEADER WITH MATCHING MENU -->
+<div class="header">
+
+  <a href='/'>
+    <img src="Images/PSLogo.jpg" align="left" style="width:60px;height:60px;">
+  </a>
+
+  <a class='logo' href='/services'>Palmetto Services LLC of SC</a>
+
+  <!-- HAMBURGER ICON -->
+  <span id="menuIcon" onclick="toggleMenu()">☰</span>
+
+  <!-- NAV LINKS -->
+  <div class="header-right" id="mobileMenu">
+    <a href='/'>Home</a>
+    <a class='active' href='/services'>Services</a>
+    <a href='/portfolio'>Portfolio</a>
+    <a href='/about'>About</a>
+    <a href='/contact'>Contact</a>
+  </div>
+
+</div>
+
+<!-- PAGE CONTENT -->
+<!-- AUTO CAROUSEL SECTION -->
+<div style="width:100%;max-width:700px;margin:30px auto;text-align:center;position:relative;">
+
+  <!-- Slides -->
+  <img class="autoSlide" src="Images/slide1.jpg" style="width:100%;display:none;border-radius:8px;object-fit:contain;">
+  <img class="autoSlide" src="Images/slide2.jpg" style="width:100%;display:none;border-radius:8px;object-fit:contain;">
+  <img class="autoSlide" src="Images/slide3.jpg" style="width:100%;display:none;border-radius:8px;object-fit:contain;">
+  <img class="autoSlide" src="Images/slide4.jpg" style="width:100%;display:none;border-radius:8px;object-fit:contain;">
+  <img class="autoSlide" src="Images/slide5.jpg" style="width:100%;display:none;border-radius:8px;object-fit:contain;">
+  <img class="autoSlide" src="Images/slide6.jpg" style="width:100%;display:none;border-radius:8px;object-fit:contain;">
+
+</div>
+
+<script>
+let autoIndex = 0;
+autoCarousel();
+adjustHeights();
+
+function autoCarousel() {
+  let slides = document.getElementsByClassName("autoSlide");
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  autoIndex++;
+  if (autoIndex > slides.length) { autoIndex = 1; }
+  slides[autoIndex - 1].style.display = "block";
+  setTimeout(autoCarousel, 3000);
+}
+
+function adjustHeights() {
+  let slides = document.getElementsByClassName("autoSlide");
+  let isMobile = window.innerWidth <= 600;
+
+  for (let i = 0; i < slides.length; i++) {
+    if (isMobile) {
+      // FULL HEIGHT ON MOBILE — NO CROPPING
+      slides[i].style.maxHeight = "none";
+      slides[i].style.height = "auto";
+      slides[i].style.objectFit = "contain";
+    } else {
+      // LARGER IMAGES ON DESKTOP — NO CROPPING
+      slides[i].style.maxHeight = "400px";  // <-- increased height
+      slides[i].style.height = "400px";
+      slides[i].style.objectFit = "contain";
+    }
+  }
+}
+
+window.onresize = adjustHeights;
+</script>
+  
+<!-- SERVICE DESCRIPTION SECTION -->
+<div style="max-width:70%;width:90%;margin:40px auto;text-align:center;font-size:18px;line-height:1.6;">
+  <h2 style="margin-bottom:10px;">Our Services</h2>
+  <p>
+    We proudly offer a wide range of home‑improvement and home security services, including:
+  </p>
+
+  <p style="margin-top:20px;">
+    <strong>• Kitchen & Bathroom Remodeling<br>
+    • Flooring Installation<br>
+    • Interior & Exterior Painting<br>
+    • Custom Cabinetry<br>
+    • Custom Carpentry<br>
+    • Trim Carpentry<br>
+    • Front Door & Sliding Door Installation<br>
+    • Tile Work<br>
+    • Drywall Repair & Installation<br>
+    • Plumbing Services<br>
+    • Electrical Services<br>
+    • Security Camera Installation (No Monthly Fees)</strong>
+  </p>
+</div>
+
+  <!-- FOOTER TEXT -->
+<div class="center">
+  <p>
+    <br>Check out the <a href='/portfolio'>Portfolio Page</a> to see more of our work.
+    <br><br>
+    If you would like more information, visit our <a href='/contact'>Contact Page</a>.
+  </p>
+</div>
+
+  <!-- MOBILE MENU SCRIPT -->
+<script>
+function toggleMenu() {
+  var menu = document.getElementById("mobileMenu");
+  menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
