@@ -1,12 +1,12 @@
 :root{
-  --circuit:#16233A;
-  --circuit-dark:#0E1626;
-  --volt:#F5B942;
-  --volt-dark:#D99B26;
-  --copper:#BD6B3E;
+  --circuit:#C8102E;
+  --circuit-dark:#8C0A1F;
+  --volt:#1E9B5C;
+  --volt-dark:#157A47;
+  --copper:#14181B;
   --ink:#1A1D21;
   --slate:#5C6570;
-  --fog:#EFF1EE;
+  --fog:#EEF6F0;
   --white:#FFFFFF;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
